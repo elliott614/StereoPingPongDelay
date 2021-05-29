@@ -9,7 +9,7 @@
 #include "PluginProcessor.h"
 #include "PluginEditor.h"
 
-void NewProjectAudioProcessorEditor::sliderValueChanged(juce::Slider* slider)
+void StereoPingPongDelayAudioProcessorEditor::sliderValueChanged(juce::Slider* slider)
 {
     audioProcessor.delayTime_mSec = delayTimeSlider.getValue();
     audioProcessor.delayAlg = DelayTypeSlider.getValue() == 0 ? delayAlgorithm::kNormal : delayAlgorithm::kPingPong;
@@ -22,7 +22,7 @@ void NewProjectAudioProcessorEditor::sliderValueChanged(juce::Slider* slider)
 }
 
 //==============================================================================
-NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioProcessor& p)
+StereoPingPongDelayAudioProcessorEditor::StereoPingPongDelayAudioProcessorEditor (StereoPingPongDelayAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
     // Make sure that before the constructor has finished, you've set the
@@ -88,12 +88,12 @@ NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioP
     wetDBSlider.addListener(this);
 }
 
-NewProjectAudioProcessorEditor::~NewProjectAudioProcessorEditor()
+StereoPingPongDelayAudioProcessorEditor::~StereoPingPongDelayAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void NewProjectAudioProcessorEditor::paint (juce::Graphics& g)
+void StereoPingPongDelayAudioProcessorEditor::paint (juce::Graphics& g)
 {
     // fill the whole window white
     g.fillAll(juce::Colours::white);
@@ -107,7 +107,7 @@ void NewProjectAudioProcessorEditor::paint (juce::Graphics& g)
     g.drawFittedText("Delay", 0, 0, getWidth(), 30, juce::Justification::centred, 1);
 }
 
-void NewProjectAudioProcessorEditor::resized()
+void StereoPingPongDelayAudioProcessorEditor::resized()
 {
     delayTimeSlider.setBounds(40, 30, 20, getHeight() - 60);
     DelayTypeSlider.setBounds(60, 30, 20, getHeight() - 60);
