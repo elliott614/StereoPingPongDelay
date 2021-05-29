@@ -14,7 +14,7 @@
 //==============================================================================
 /**
 */
-class NewProjectAudioProcessor  : public juce::AudioProcessor
+class StereoPingPongDelayAudioProcessor  : public juce::AudioProcessor
 {
 public:
     // --- Continuous Plugin Variables 
@@ -30,8 +30,8 @@ public:
 
 
     //==============================================================================
-    NewProjectAudioProcessor();
-    ~NewProjectAudioProcessor() override;
+    StereoPingPongDelayAudioProcessor();
+    ~StereoPingPongDelayAudioProcessor() override;
     float leftPercent = 0.;
     float rightPercent = 0.;
     AudioDelay audioDelayObject;
@@ -75,7 +75,7 @@ public:
     void updateParameters();
 private:
     //==============================================================================
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NewProjectAudioProcessor)
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StereoPingPongDelayAudioProcessor)
 
  
 };
